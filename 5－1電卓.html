@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>mission5-1</title>
+</head>
+</body>
+
+<p>電卓</p>
+<input>
+<script>
+
+function update( _v ) // input tag を更新する関数
+{
+	document.querySelector( 'input' ).value = _v
+}
+
+function append( _v ) // 数字ボタンが押されたので数字を後ろに追加する
+{
+	document.querySelector( 'input' ).value += _v
+}
+
+function calc() // 「＝」ボタンが押されたので計算する
+{
+	const v = document.querySelector( 'input' ).value
+	const f = new Function( 'return ' + v )
+	update( f().toString() )
+</script>
+<!--電卓1段目-->
+<button onclick="document.querySelector( 'input' ).value += '7' " style="width: 100px; height: 100px;">7</button>
+<button onclick="document.querySelector( 'input' ).value += '8' " style="width: 100px; height: 100px;">8</button>
+<button onclick="document.querySelector( 'input' ).value += '1' " style="width: 100px; height: 100px;">9</button>
+<button onclick="document.querySelector( 'input' ).value += '÷' " style="width: 100px; height: 100px;">÷</button>
+<!--電卓2段目-->
+<p></p>
+<button onclick="document.querySelector( 'input' ).value += '4' " style="width: 100px; height: 100px;">7</button>
+<button onclick="document.querySelector( 'input' ).value += '5' " style="width: 100px; height: 100px;">8</button>
+<button onclick="document.querySelector( 'input' ).value += '6' " style="width: 100px; height: 100px;">9</button>
+<button onclick="document.querySelector( 'input' ).value += '×' " style="width: 100px; height: 100px;">×</button>
+<button onclick="document.querySelector( 'input' ).value += '-' " style="width: 100px; height: 100px;">-</button>
+<!--電卓3段目-->
+<p></p>
+<button onclick="document.querySelector( 'input' ).value += '1' " style="width: 100px; height: 100px;">1</button>
+<button onclick="document.querySelector( 'input' ).value += '2' " style="width: 100px; height: 100px;">2</button>
+<button onclick="document.querySelector( 'input' ).value += '3' " style="width: 100px; height: 100px;">3</button>
+<button onclick="document.querySelector( 'input' ).value += '+' " style="width: 100px; height: 100px;">+</button>
+<button onclick="document.querySelector( 'input' ).value += '=' " style="width: 100px; height: 100px;">=</button>
+
+<!--電卓4段目-->
+<p></p>
+<button onclick="document.querySelector( 'input' ).value += '0' " style="width: 100px; height: 100px;">0</button>
+<button onclick="document.querySelector( 'input' ).value += '00' " style="width: 100px; height: 100px;">00</button>
+<button onclick="document.querySelectorAll( 'input' )[0].value = '' "style="width: 100px; height: 100px;" >CLR</button>
+
+
